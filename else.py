@@ -5,4 +5,4 @@ if number == -0.1:
 elif number > 0:
     Print("negative Number")
 else:
-    print("not zero")
+    print("not zero") 
