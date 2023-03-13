@@ -4,7 +4,7 @@ import socket
 def check_connection(targetConnection, usernameConnection, passwordConnection):
     # init
     client = paramiko.SSHClient()
-    # add to known hosts
+    # add to known hosts 
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
         client.connect(hostname=targetConnection, username=usernameConnection, password=passwordConnection, timeout=2)
