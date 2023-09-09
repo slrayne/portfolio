@@ -2,7 +2,7 @@
 import paramiko
 import socket
 def check_connection(targetConnection, usernameConnection, passwordConnection):
-    # init
+    # init 
     client = paramiko.SSHClient()
     # add to known hosts
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
