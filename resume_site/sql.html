@@ -15,6 +15,13 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column; /* Added to arrange elements vertically */
+        }
+        
+        h2 {
+            font-size: 1.5em; /* Adjusted font size */
+            color: #79afb1; /* Matched color with the rest of the text */
+            margin-bottom: 20px; /* Added margin for spacing */
         }
         
         form {
@@ -24,6 +31,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
             border: 2px solid #79afb1;
+            margin-bottom: 20px; /* Added space between form and video */
         }
         
         h1 {
@@ -78,11 +86,19 @@
             max-width: 400px;
             text-align: center;
         }
+        
+        .mp4-container img {
+            max-width: 100%; /* Make sure the video scales down */
+        }
     </style>
 </head>
 <body>
-<h2>Login page no longer live, please watch the video to see how dymanic this page was!</h2> 
-    <br>    
+    <h2>Login page no longer live, please watch the video to see how dynamic this page was!</h2>
+    
+    <div class="mp4-container">
+        <img src="https://slrayne.github.io/portfolio/resume_site/public/sql2.mp4" alt="Video">
+    </div>
+    
     <form action="/api" method="post" style="text-align: center;">
         <h1>Create account</h1>
         <label for="user">Username:</label>
@@ -91,51 +107,15 @@
         <input id="2" type="text" name="password">
         <button type="submit">Submit</button>
     </form>
-    <script>
-        const user = document.getElementById("1");
-        const password = document.getElementById("2");
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            console.log([...data])
-        fetch("/api",{
-            method:"POST",
-            body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .then(err => console.log(err))
-    })
-
-    </script>
-    <br>
+    
     <form action="/login" method="post" style="text-align: center;">
         <h1>login</h1>
         <label for="user1">Username:</label>
         <input id="3" type="text" name="user1">
         <label for="password1">Password:</label>
         <input id="4" type="text" name="password1">
-        <button type="sumbit">Submit</button>
+        <button type="submit">Submit</button>
     </form>
-    <script>
-        const user1 = document.getElementById("3");
-        const password1 = document.getElementById("4");
-        form.addEventListener('submit', function(e){
-            e.preventDefault();
-            console.log([...data])
-        fetch("/login",{
-            method:"POST",
-            body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .then(err => console.log(err))
-    })
-
-    </script>
-    <br><br>
- <div class="mp4-container">
-<img src="https://slrayne.github.io/portfolio/resume_site/public/sql2.mp4" alt="GIF">
-    </div>
 
 </body>
 </html>
