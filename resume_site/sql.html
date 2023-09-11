@@ -24,14 +24,20 @@
             margin-bottom: 20px; /* Added margin for spacing */
         }
         
+        .container {
+            display: flex;
+            justify-content: space-between; /* Horizontally aligns the two forms */
+            max-width: 800px; /* Adjust the width as needed */
+            width: 100%;
+        }
+        
         form {
-            max-width: 400px;
+            flex: 1; /* Distributes available space equally */
             padding: 20px;
             background-color: #333;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
             border: 2px solid #79afb1;
-            margin-bottom: 20px; /* Added space between form and video */
         }
         
         h1 {
@@ -85,6 +91,7 @@
         .mp4-container {
             max-width: 400px;
             text-align: center;
+            margin-top: 20px; /* Added space between forms and video */
         }
         
         .mp4-container video {
@@ -96,26 +103,31 @@
     <h2>Login page no longer live, please watch the video to see how dynamic this page was!</h2>
     
     <div class="mp4-container">
-        <img src="https://slrayne.github.io/portfolio/resume_site/public/sql2.mp4" alt="Video">
+        <video width="400" controls>
+            <source src="https://slrayne.github.io/portfolio/resume_site/public/sql2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     
-    <form action="/api" method="post" style="text-align: center;">
-        <h1>Create account</h1>
-        <label for="user">Username:</label>
-        <input id="1" type="text" name="user">
-        <label for="password">Password:</label>
-        <input id="2" type="text" name="password">
-        <button type="submit">Submit</button>
-    </form>
-    
-    <form action="/login" method="post" style="text-align: center;">
-        <h1>login</h1>
-        <label for="user1">Username:</label>
-        <input id="3" type="text" name="user1">
-        <label for="password1">Password:</label>
-        <input id="4" type="text" name="password1">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <form action="/api" method="post" style="text-align: center;">
+            <h1>Create account</h1>
+            <label for="user">Username:</label>
+            <input id="1" type="text" name="user">
+            <label for="password">Password:</label>
+            <input id="2" type="text" name="password">
+            <button type="submit">Submit</button>
+        </form>
+        
+        <form action="/login" method="post" style="text-align: center;">
+            <h1>Login</h1>
+            <label for="user1">Username:</label>
+            <input id="3" type="text" name="user1">
+            <label for="password1">Password:</label>
+            <input id="4" type="text" name="password1">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
