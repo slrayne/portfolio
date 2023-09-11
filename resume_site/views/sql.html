@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            border: 2px solid #79afb1;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #79afb1;
+        }
+        
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #79afb1;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            background-color: #555;
+            border: none;
+            color: #79afb1;
+            border-radius: 5px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #79afb1;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: rgb(0, 110, 255);
+        }
+        
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px; 
+        }
+    </style>
+</head>
+<body>
+    <form action="/api" method="post" style="text-align: center;">
+        <h1>Create account</h1>
+        <label for="user">Username:</label>
+        <input id="1" type="text" name="user">
+        <label for="password">Password:</label>
+        <input id="2" type="text" name="password">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const user = document.getElementById("1");
+        const password = document.getElementById("2");
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            console.log([...data])
+        fetch("/api",{
+            method:"POST",
+            body: JSON.stringify(data),
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .then(err => console.log(err))
+    })
+
+    </script>
+    <br>
+    <form action="/login" method="post" style="text-align: center;">
+        <h1>login</h1>
+        <label for="user1">Username:</label>
+        <input id="3" type="text" name="user1">
+        <label for="password1">Password:</label>
+        <input id="4" type="text" name="password1">
+        <button type="sumbit">Submit</button>
+    </form>
+    <script>
+        const user1 = document.getElementById("3");
+        const password1 = document.getElementById("4");
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            console.log([...data])
+        fetch("/login",{
+            method:"POST",
+            body: JSON.stringify(data),
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .then(err => console.log(err))
+    })
+
+    </script>
+</body>
+</html>
